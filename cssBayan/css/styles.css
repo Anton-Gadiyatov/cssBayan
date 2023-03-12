@@ -1,3 +1,10 @@
+:root {
+  --main-font-color: black;
+  --secondary-font-color: blue;
+
+  --main-bg-color: bisque;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -10,7 +17,8 @@ html {
 
 body {
   font-family: "Roboto Mono", monospace;
-  background-color: bisque;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
 }
 
 .app-wrapper {
@@ -24,8 +32,26 @@ body {
   font-weight: 700;
 }
 
-.accordion__item {
+.accordion__label {
+  position: relative;
+  display: block;
+}
+
+.accordion-item {
   border-top: dotted gray 1px;
+  font-size: 2rem;
+  line-height: 4rem;
+  color: var(--secondary-font-color);
+}
+
+.accordion-item input {
+  display: none;
+}
+
+.accordion-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion__content {
@@ -34,6 +60,37 @@ body {
   height: 0;
 }
 
-.accordion__item input[type="checkbox"]:checked ~ .accordion__content {
+.fa-chevron-circle-down {
+  display: none;
+}
+
+.app-wrapper:hover .accordion-item__header {
+  color: var(--main-font-color);
+}
+
+.app-wrapper:hover .fa-chevron-circle-down {
+  display: inline;
+}
+
+.accordion-item:hover .accordion-item__header > .fa-chevron-circle-down {
+  transform: rotate(180deg);
+}
+
+.accordion-item:hover > .accordion__label > .accordion__content {
   height: 100%;
+}
+
+.accordion-item input[type="checkbox"]:checked ~ .accordion__content {
+  height: 100%;
+}
+
+.accordion-item input[type="checkbox"]:checked ~ .accordion-item__header {
+  color: var(--main-font-color);
+}
+
+.accordion-item
+  input[type="checkbox"]:checked
+  ~ .accordion-item__header
+  > .fa-chevron-circle-down {
+  transform: rotate(180deg);
 }
