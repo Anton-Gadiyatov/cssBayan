@@ -66,6 +66,7 @@ body {
 
 .accordion__content > img {
   border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .fa-chevron-circle-down {
@@ -74,7 +75,7 @@ body {
 }
 
 .accordion-item input[type="checkbox"]:checked ~ .accordion__content {
-  height: 30rem;
+  height: 25rem;
 }
 
 .accordion-item input[type="checkbox"]:checked ~ .accordion-item__header {
@@ -104,7 +105,51 @@ body {
   }
 
   .accordion-item:hover > .accordion__label > .accordion__content {
-    height: 30rem;
+    height: 25rem;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 820px) {
+  .app__title {
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  .accordion-item {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .accordion-item input[type="checkbox"]:checked ~ .accordion__content {
+    height: 13rem;
+  }
+
+  @media (hover: hover) {
+    .accordion-item:hover > .accordion__label > .accordion__content {
+      height: 13rem;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .app__title {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .accordion-item {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .accordion-item input[type="checkbox"]:checked ~ .accordion__content {
+    height: 9rem;
+  }
+
+  @media (hover: hover) {
+    .accordion-item:hover > .accordion__label > .accordion__content {
+      height: 9rem;
+    }
   }
 }
