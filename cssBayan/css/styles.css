@@ -7,3 +7,33 @@ html {
 *:before {
   box-sizing: inherit;
 }
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: bisque;
+}
+
+.app-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.app__title {
+  font-size: 3rem;
+  line-height: 5rem;
+  font-weight: 700;
+}
+
+.accordion__item {
+  border-top: dotted gray 1px;
+}
+
+.accordion__content {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+
+.accordion__item input[type="checkbox"]:checked ~ .accordion__content {
+  height: 100%;
+}
