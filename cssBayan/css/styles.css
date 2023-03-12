@@ -67,11 +67,20 @@ body {
 .accordion__content > img {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  transition: filter 0.2s;
 }
 
 .fa-chevron-circle-down {
   opacity: 0;
   transition: transform 0.5s, opacity 0.2s;
+}
+
+.accordion__label:active > .accordion-item__header > span {
+  color: var(--secondary-font-color);
+}
+
+.accordion__label:active > .accordion__content > img {
+  filter: grayscale(80%);
 }
 
 .accordion-item input[type="checkbox"]:checked ~ .accordion__content {
