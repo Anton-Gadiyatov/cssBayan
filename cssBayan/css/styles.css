@@ -55,9 +55,16 @@ body {
 }
 
 .accordion__content {
+  display: flex;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   height: 0;
+}
+
+.accordion__content > img {
+  width: 600px;
+  height: 600px;
 }
 
 .fa-chevron-circle-down {
@@ -70,6 +77,7 @@ body {
 
 .app-wrapper:hover .fa-chevron-circle-down {
   display: inline;
+  cursor: pointer;
 }
 
 .accordion-item:hover .accordion-item__header > .fa-chevron-circle-down {
